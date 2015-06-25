@@ -38,7 +38,7 @@ RUN chmod +x /etc/my_init.d/startup.sh
 
 #some configuration for apache and drupal
 COPY apache2.conf /etc/apache2/apache2.conf
-RUN sed  -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www/' /etc/apache2/sites-available/000-default.conf
+RUN sed  -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\/dcim/' /etc/apache2/sites-available/default-ssl.conf
 RUN echo "apc.rfc1867 = 1" >> /etc/php5/apache2/php.ini
 
 #pre-config scritp for different service that need to be run when container image is create 
