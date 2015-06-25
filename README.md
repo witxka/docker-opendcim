@@ -36,13 +36,6 @@ After that check with your browser at addresses plus the port assigined by docke
 
   - **http://host_ip:port/**
 
-
-and after done with the final install at the web interface, need to run this command for security ..:
-
-    $ docker exec -it container_id after_install
-
-This will change some permission for some files internally of the container.
-
 To access the container from the server that the container is running :
 
     $ docker exec -it container_id /bin/bash
