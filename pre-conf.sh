@@ -5,21 +5,32 @@
 
  mysqladmin -u root password mysqlpsswd
  mysqladmin -u root -pmysqlpsswd reload
- mysqladmin -u root -pmysqlpsswd create drupal
+ mysqladmin -u root -pmysqlpsswd create dcim
 
- echo "GRANT ALL ON drupal.* TO drupaluser@localhost IDENTIFIED BY 'drupaldbpasswd'; flush privileges; " | mysql -u root -pmysqlpsswd
+ echo "GRANT ALL ON dcim.* TO dcim@localhost IDENTIFIED BY 'dcim'; flush privileges; " | mysql -u root -pmysqlpsswd
 
- wget 
- 
+ cd /var/www
+ wget http://opendcim.org/packages/openDCIM-4.0a.tar.gz
+ tar zxpvf openDCIM-4.0a.tar.gz
+ ln -s openDCIM-4.0a.tar.gz dcim
+ rm openDCIM-4.0a.tar.gz
  rm -R /var/www/html
+ chgrp -R www-data /var/www/dcim/pictures /var/www/dcim/drawings
+ 
+ cd /var/www/dcim
+ cp db.inc.php-dist db.inc.php
  
  #to fix error relate to ip address of container apache2
  echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/fqdn.conf
  ln -s /etc/apache2/conf-available/fqdn.conf /etc/apache2/conf-enabled/fqdn.conf
  
  #  copy conf of 
-
- a2enmod rewrite
  
+ 
+ htpasswd -cb /var/www/opendcim.password dcim dcim
+ a2enmod ssl
+ a2enmod rewrite
+ a2ensite default-ssl
+
 killall mysqld
 sleep 5s
