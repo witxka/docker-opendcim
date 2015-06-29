@@ -7,4 +7,4 @@ mysqldump -u root -pmysqlpsswd --all-databases > /var/backups/alldb_backup.sql
 cp  /etc/hosts  /var/backups/
 
 #Backup importand files relate to app
-cp /var/www/sites/default/settings.php /var/backups/
+
