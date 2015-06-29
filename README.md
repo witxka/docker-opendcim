@@ -34,7 +34,11 @@ After that check with your browser at addresses plus the port assigined by docke
 
   - **http://host_ip:port/**
 
-Log in using login/password dcim/dcim  please replace it after install. 
+Log in using login/password dcim/dcim  please replace it after initial web install with command :
+
+    $ docker exec -it container_id after_install
+    
+This will ask for new password for dcim user and it will remove the install script for security.
 
 To access the container from the server that the container is running :
 
