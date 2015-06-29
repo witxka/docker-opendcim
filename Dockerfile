@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y -q php5 php5-snmp \
                     php-gettext\
                     mysql-server \
                     php5-mysql \
+                    apache2-utils \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
