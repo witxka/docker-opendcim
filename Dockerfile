@@ -34,8 +34,7 @@ RUN mkdir -p /etc/my_init.d
 COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
-#some configuration for apache and drupal
-COPY apache2.conf /etc/apache2/apache2.conf
+#some configuration for apache 
 RUN sed  -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\/dcim/' /etc/apache2/sites-available/default-ssl.conf
 
 #pre-config scritp for different service that need to be run when container image is create 
@@ -52,8 +51,8 @@ RUN chmod +x /sbin/backup
 VOLUME /var/backups
 
 #script to execute after install configuration done .... 
-COPY after_install.sh /sbin/after_install
-RUN chmod +x /sbin/after_install
+#COPY after_install.sh /sbin/after_install
+#RUN chmod +x /sbin/after_install
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
