@@ -6,19 +6,12 @@ MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
 RUN echo "deb http://archive.ubuntu.com/ubuntu utopic-backports main restricted " >> /etc/apt/sources.list
-RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 RUN apt-get update && apt-get install -y -q php5 php5-snmp \
                     snmp-mibs-downloader \
                     php5-curl \
                     php-gettext\
-                    libapache2-mod-php5 \
-                    php5-gd \
-                    apache2 \
                     mysql-server \
                     php5-mysql \
-                    php5-json \
-                    php5-curl \
-                    php-apc \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
