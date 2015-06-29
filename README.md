@@ -36,6 +36,8 @@ After that check with your browser at addresses plus the port assigined by docke
 
   - **http://host_ip:port/**
 
+Log in using login/password dcim/dcim  please replace it after install. 
+
 To access the container from the server that the container is running :
 
     $ docker exec -it container_id /bin/bash
