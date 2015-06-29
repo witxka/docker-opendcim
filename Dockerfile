@@ -35,7 +35,8 @@ RUN mkdir -p /etc/my_init.d
 COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
-#some configuration for apache 
+#some configuration for apache
+COPY apache2.conf /etc/apache2/apache2.conf
 RUN sed  -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\/dcim/' /etc/apache2/sites-available/default-ssl.conf
 
 #pre-config scritp for different service that need to be run when container image is create 
