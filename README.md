@@ -58,4 +58,4 @@ Example of this [docker-opendcim][6]
 [3]:https://www.opendcim.org/downloads.html
 [4]:http://docs.docker.com
 [5]:https://github.com/QuantumObject/docker-opendcim
-[6]:http://www.quantumobject.com:32769
+[6]:https://www.quantumobject.com:32769
