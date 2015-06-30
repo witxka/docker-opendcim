@@ -10,10 +10,10 @@
  echo "GRANT ALL ON dcim.* TO dcim@localhost IDENTIFIED BY 'dcim'; flush privileges; " | mysql -u root -pmysqlpsswd
 
  cd /var/www
- wget http://opendcim.org/packages/openDCIM-4.0a.tar.gz
- tar zxpvf openDCIM-4.0a.tar.gz
- ln -s openDCIM-4.0a dcim
- rm openDCIM-4.0a.tar.gz
+ wget http://opendcim.org/packages/openDCIM-4.0.1.tar.gz
+ tar zxpvf openDCIM-4.0.1.tar.gz
+ ln -s openDCIM-4.0.1 dcim
+ rm openDCIM-4.0.1.tar.gz
  rm -R /var/www/html
  chgrp -R www-data /var/www/dcim/pictures /var/www/dcim/drawings
  
