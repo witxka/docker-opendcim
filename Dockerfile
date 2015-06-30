@@ -7,7 +7,8 @@ MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 #Installation of nesesary package/software for this containers...
 RUN echo "deb http://archive.ubuntu.com/ubuntu utopic-backports main restricted " >> /etc/apt/sources.list
 RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) multiverse"
-RUN apt-get update && apt-get install -y -q php5 php5-snmp \
+RUN apt-get update && apt-get install -y -q php5 snmp \
+                    php5-snmp \
                     snmp-mibs-downloader \
                     php5-curl \
                     php-gettext\
