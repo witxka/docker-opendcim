@@ -53,9 +53,12 @@ To help improve this container [docker-opendcim][5]
 
 Example of this [docker-opendcim][6]
 
+For additional info about us and our projects check our site [www.quantumobject.com][7]
+
 [1]:http://www.opendcim.org
 [2]:https://www.docker.com
 [3]:http://www.opendcim.org/downloads.html
 [4]:http://docs.docker.com
 [5]:https://github.com/QuantumObject/docker-opendcim
 [6]:https://www.quantumobject.com:32769
+[7]:http://www.quantumobject.com/
