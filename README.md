@@ -9,7 +9,7 @@ Docker container for [Opendcim][3]
 
   - [Docker][2]
 
-To install docker in Ubuntu 14.04 use the commands:
+To install docker in Ubuntu 15.04 use the commands:
 
     $ sudo apt-get update
     $ wget -qO- https://get.docker.com/ | sh
@@ -43,6 +43,7 @@ This will ask for new password for dcim user and it will remove the install scri
 To access the container from the server that the container is running :
 
     $ docker exec -it container_id /bin/bash
+    $ export TERM=xterm       #needed to execute some command correctly (nano,top)
 
 
 ## More Info
