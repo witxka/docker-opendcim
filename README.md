@@ -20,11 +20,11 @@ To install docker in Ubuntu 15.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p 443 quantumobject/docker-opendcim
+    $ docker run -d -p 80 quantumobject/docker-opendcim
 
 or
 
-    $ docker run -d -p xxxxx:443 quantumobject/docker-opendcim
+    $ docker run -d -p xxxxx:80 quantumobject/docker-opendcim
 
 Where xxxxx is the port assigned by you for the container if not docker will assigned one for it.
 
@@ -43,8 +43,12 @@ This will ask for new password for dcim user and it will remove the install scri
 To access the container from the server that the container is running :
 
     $ docker exec -it container_id /bin/bash
-    $ export TERM=xterm       #needed to execute some command correctly (nano,top)
 
+note: deploy this container behind proxy with SSL :
+
+https://github.com/jwilder/nginx-proxy
+
+https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
 
 ## More Info
 
@@ -54,7 +58,7 @@ To help improve this container [docker-opendcim][5]
 
 Example of this [docker-opendcim][6]
 
-For additional info about us and our projects check our site [www.quantumobject.com][7]
+For additional info about us and our projects check our site [www.quantumobject.org][7]
 
 [1]:http://www.opendcim.org
 [2]:https://www.docker.com
@@ -62,4 +66,4 @@ For additional info about us and our projects check our site [www.quantumobject.
 [4]:http://docs.docker.com
 [5]:https://github.com/QuantumObject/docker-opendcim
 [6]:https://www.quantumobject.com:32769
-[7]:http://www.quantumobject.com/
+[7]:https://www.quantumobject.org/
