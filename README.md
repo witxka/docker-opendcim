@@ -1,6 +1,6 @@
 # docker-opendcim
 
-Docker container for [Opendcim][3]
+Docker container for [Opendcim 4.3][3]
 
 "This is openDCIM, a free, web based Data Center Infrastructure Management application. " "openDCIM does not contend to be a function by function replacement for commercial applications. Instead, openDCIM covers the majority of features needed by the developers - as is often the case of open source software. The software is released under the GPL v3 license, so you are welcome to take it, modify it, and share it with others, as long as you acknowledge where it came from."
 
@@ -65,5 +65,5 @@ For additional info about us and our projects check our site [www.quantumobject.
 [3]:http://www.opendcim.org/downloads.html
 [4]:http://docs.docker.com
 [5]:https://github.com/QuantumObject/docker-opendcim
-[6]:https://www.quantumobject.com:32769
+[6]:https://opendcim.quantumobject.org/
 [7]:https://www.quantumobject.org/
