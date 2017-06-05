@@ -14,6 +14,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php5 
                     php-gettext\
                     mysql-server \
                     php5-mysql \
+                    php5-gd \
                     apache2-utils \
                     graphviz \
                     && apt-get clean \
