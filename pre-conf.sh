@@ -15,7 +15,7 @@
  ln -s openDCIM-4.4 dcim
  rm openDCIM-4.4.tar.gz
  rm -R /var/www/html
- chgrp -R www-data /var/www/dcim/pictures /var/www/dcim/drawings /var/www/dcim/images
+ chgrp -R www-data /var/www/dcim/pictures /var/www/dcim/drawings /var/www/dcim/vendor/mpdf/mpdf/ttfontdata
  
  cd /var/www/dcim
  cp db.inc.php-dist db.inc.php
