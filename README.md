@@ -1,6 +1,6 @@
 # docker-opendcim
 
-Docker container for [Opendcim 4.4][3]
+Docker container for [Opendcim 4.5][3]
 
 "This is openDCIM, a free, web based Data Center Infrastructure Management application. " "openDCIM does not contend to be a function by function replacement for commercial applications. Instead, openDCIM covers the majority of features needed by the developers - as is often the case of open source software. The software is released under the GPL v3 license, so you are welcome to take it, modify it, and share it with others, as long as you acknowledge where it came from."
 
@@ -9,7 +9,7 @@ Docker container for [Opendcim 4.4][3]
 
   - [Docker][2]
 
-To install docker in Ubuntu 15.04 use the commands:
+To install docker in Ubuntu 16.04 use the commands:
 
     $ sudo apt-get update
     $ wget -qO- https://get.docker.com/ | sh
