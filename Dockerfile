@@ -13,6 +13,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php7.
                     mysql-server \
                     php7.0-mysql \
                     php7.0-gd \
+                    apache2 \
+                    libapache2-mod-php7.0 \
                     apache2-utils \
                     graphviz \
                     && apt-get clean \
