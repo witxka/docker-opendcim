@@ -12,6 +12,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php7.
                     php-gettext\
                     mysql-server \
                     php7.0-mysql \
+                    php7.0-zip \
+                    php7.0-mbstring \
                     php7.0-gd \
                     apache2 \
                     libapache2-mod-php7.0 \
