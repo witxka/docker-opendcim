@@ -2,12 +2,11 @@
 
 mkdir -p /var/run/mysqld
 chown mysql:mysql /var/run/mysqld /var/lib/mysql
-chpst -u mysql /usr/sbin/mysqld --initialize --skip-grant-tables &
-sleep 2s
-password=$(cat /var/log/mysql/error.log | grep "A temporary password is generated for" | tail -1 | sed -n 's/.*root@localhost: //p')
+chpst -u mysql /usr/sbin/mysqld --initialize  &
+#--skip-grant-tables
+ sleep 2s
 
- mysql -uroot -p$password -Bse "ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlpsswd';"
- #mysqladmin -u root password mysqlpsswd
+ mysql -uroot -Bse "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysqlpsswd';"
  mysqladmin -u root -pmysqlpsswd reload
  mysqladmin -u root -pmysqlpsswd create dcim
 
