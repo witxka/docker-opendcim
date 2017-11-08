@@ -4,8 +4,9 @@ mkdir -p /var/run/mysqld
 chown mysql:mysql /var/run/mysqld /var/lib/mysql
 chpst -u mysql /usr/bin/mysqld_safe --initialize-insecure --skip-grant-tables &
 
- sleep 1s
+ sleep 5s
 
+ chpst -u mysql /usr/bin/mysqld_safe  & 
  mysqladmin -u root password mysqlpsswd
  mysqladmin -u root -pmysqlpsswd reload
  mysqladmin -u root -pmysqlpsswd create dcim
