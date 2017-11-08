@@ -2,7 +2,8 @@
 
 mkdir -p /var/run/mysqld
 chown mysql:mysql /var/run/mysqld
-/usr/bin/mysqld_safe --initialize-insecure --skip-grant-tables &
+chpst -u mysql /usr/bin/mysqld_safe --initialize-insecure --skip-grant-tables &
+
  sleep 1s
 
  mysqladmin -u root password mysqlpsswd
