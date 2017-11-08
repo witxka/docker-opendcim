@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p /var/run/mysqld
-chown mysql:mysql /var/run/mysqld
+chown mysql:mysql /var/run/mysqld /var/lib/mysql
 chpst -u mysql /usr/bin/mysqld_safe --initialize-insecure --skip-grant-tables &
 
  sleep 1s
