@@ -2,16 +2,15 @@
 
 mkdir -p /var/run/mysqld
 chown mysql:mysql /var/run/mysqld
-/usr/bin/mysqld_safe --initialize-insecure &
-#--skip-grant-tables
-
- sleep 5s
+/usr/bin/mysqld_safe --initialize-insecure --skip-grant-tables &
+ sleep 1s
 
  mysqladmin -u root password mysqlpsswd
  mysqladmin -u root -pmysqlpsswd reload
  mysqladmin -u root -pmysqlpsswd create dcim
 
  echo "GRANT ALL ON dcim.* TO dcim@localhost IDENTIFIED BY 'dcim'; flush privileges; " | mysql -u root -pmysqlpsswd
+ echo "SET GLOBAL sql_mode = '';" | mysql -u root -pmysqlpsswd
 
  cd /var/www
  wget http://opendcim.org/packages/openDCIM-4.5.tar.gz
