@@ -2,7 +2,7 @@
 
 mkdir -p /var/run/mysqld
 chown mysql:mysql /var/run/mysqld /var/lib/mysql
-chpst -u mysql /usr/bin/mysqld --initialize --skip-grant-tables &
+chpst -u mysql /usr/sbin/mysqld --initialize --skip-grant-tables &
 sleep 2s
 password=$(cat /var/log/mysql/error.log | grep "A temporary password is generated for" | tail -1 | sed -n 's/.*root@localhost: //p')
 
