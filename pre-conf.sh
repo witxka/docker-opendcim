@@ -1,6 +1,8 @@
 #!/bin/bash
 
-/usr/bin/mysqld_safe &
+mkdir -p /var/run/mysqld
+chown mysql:mysql /var/run/mysqld
+/usr/bin/mysqld_safe --skip-grant-tables &
  sleep 5s
 
  mysqladmin -u root password mysqlpsswd
