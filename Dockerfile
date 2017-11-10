@@ -10,7 +10,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php7.
                     snmp-mibs-downloader \
                     php7.0-curl \
                     php-gettext\
-                    mysql-server \
+                    mariadb-server \
                     php7.0-mysql \
                     php7.0-zip \
                     php7.0-mbstring \
