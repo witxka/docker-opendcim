@@ -1,20 +1,22 @@
 #name of container: docker-opendcim
-#versison of container: 0.3.1
-FROM quantumobject/docker-baseimage:15.04
+#versison of container: 0.3.2
+FROM quantumobject/docker-baseimage:16.04
 MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 
-#add repository and update the container
+#update the container
 #Installation of nesesary package/software for this containers...
-RUN echo "deb http://archive.ubuntu.com/ubuntu `cat /etc/container_environment/DISTRIB_CODENAME`-backports main restricted " >> /etc/apt/sources.list
-RUN echo "deb http://archive.ubuntu.com/ubuntu `cat /etc/container_environment/DISTRIB_CODENAME` multiverse" >> /etc/apt/sources.list
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php5 snmp \
-                    php5-snmp \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php7.0 snmp \
+                    php7.0-snmp \
                     snmp-mibs-downloader \
-                    php5-curl \
+                    php7.0-curl \
                     php-gettext\
-                    mysql-server \
-                    php5-mysql \
-                    php5-gd \
+                    mariadb-server \
+                    php7.0-mysql \
+                    php7.0-zip \
+                    php7.0-mbstring \
+                    php7.0-gd \
+                    apache2 \
+                    libapache2-mod-php7.0 \
                     apache2-utils \
                     graphviz \
                     && apt-get clean \
