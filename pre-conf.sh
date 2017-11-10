@@ -2,7 +2,7 @@
 
 #mkdir -p /var/run/mysqld
 #chown mysql:mysql /var/run/mysqld /var/lib/mysql
-chpst -u mysql /usr/bin/mysqld_safe  &
+/usr/bin/mysqld_safe  &
 sleep 2s
  #mysql -uroot -Bse "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysqlpsswd';"
  mysqladmin -u root password mysqlpsswd
