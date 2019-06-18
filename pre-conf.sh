@@ -2,7 +2,7 @@
 
 /usr/bin/mysqld_safe  &
 sleep 2s
-opendcim_version=18.01
+opendcim_version=19.01
  mysqladmin -u root password mysqlpsswd
  mysqladmin -u root -pmysqlpsswd reload
  mysqladmin -u root -pmysqlpsswd create dcim
