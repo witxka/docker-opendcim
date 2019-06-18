@@ -1,22 +1,22 @@
 #name of container: docker-opendcim
-#versison of container: 0.3.2
-FROM quantumobject/docker-baseimage:16.04
+#versison of container: 0.4.2
+FROM quantumobject/docker-baseimage:18.04
 MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 
 #update the container
 #Installation of nesesary package/software for this containers...
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php7.0 snmp \
-                    php7.0-snmp \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php snmp \
+                    php-snmp \
                     snmp-mibs-downloader \
-                    php7.0-curl \
+                    php-curl \
                     php-gettext\
                     mariadb-server \
-                    php7.0-mysql \
-                    php7.0-zip \
-                    php7.0-mbstring \
-                    php7.0-gd \
+                    php-mysql \
+                    php-zip \
+                    php-mbstring \
+                    php-gd \
                     apache2 \
-                    libapache2-mod-php7.0 \
+                    libapache2-mod-php \
                     apache2-utils \
                     graphviz \
                     && apt-get clean \
