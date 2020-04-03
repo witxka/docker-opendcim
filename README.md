@@ -40,6 +40,14 @@ To access the container from the server that the container is running :
 
     $ docker exec -it container_id /bin/bash
 
+## Added Volume for peristent data :
+
+   /var/www/dcim/pictures
+ 
+   /var/www/dcim/drawings
+   
+   /var/lib/mysql
+
 note: deploy this container behind proxy with SSL :
 
 https://github.com/jwilder/nginx-proxy
