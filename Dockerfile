@@ -1,11 +1,11 @@
 #name of container: docker-opendcim
-#versison of container: 0.4.2
-FROM quantumobject/docker-baseimage:18.04
+#versison of container: 0.4.3
+FROM quantumobject/docker-baseimage:20.04
 MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 
 #update the container
 #Installation of nesesary package/software for this containers...
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php snmp \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends php snmp \
                     php-snmp \
                     snmp-mibs-downloader \
                     php-curl \
@@ -55,12 +55,6 @@ RUN chmod +x /sbin/pre-conf; sync \
     && /bin/bash -c /sbin/pre-conf \
     && rm /sbin/pre-conf
     
-##scritp that can be running from the outside using docker-bash tool ...
-## for example to create backup for database with convination of VOLUME   dockers-bash container_ID backup_mysql
-COPY backup.sh /sbin/backup
-RUN chmod +x /sbin/backup
-VOLUME /var/backups
-
 #script to execute after install configuration done .... 
 COPY after_install.sh /sbin/after_install
 RUN chmod +x /sbin/after_install
@@ -70,7 +64,7 @@ RUN chmod +x /sbin/after_install
 EXPOSE 80
 
 #creatian of volume 
-VOLUME /var/www/
+VOLUME /var/www/dcim
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
