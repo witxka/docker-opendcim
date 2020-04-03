@@ -38,3 +38,9 @@ EOF
 
 killall mysqld
 sleep 5s
+
+#make backup copy for Volume 
+mkdir -p /var/backup
+cp -Rp /var/lib/mysql /var/backup
+cp -Rp /var/www/dcim/pictures /var/backup
+cp -Rp /var/www/dcim/drawings /var/backup
