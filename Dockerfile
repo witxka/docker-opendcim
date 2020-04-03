@@ -64,7 +64,7 @@ RUN chmod +x /sbin/after_install
 EXPOSE 80
 
 #creatian of volume 
-VOLUME /var/www/dcim
+VOLUME /var/www/dcim/pictures /var/www/dcim/drawings /var/lib/mysql
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
