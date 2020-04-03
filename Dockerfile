@@ -1,6 +1,6 @@
 #name of container: docker-opendcim
 #versison of container: 0.4.3
-FROM quantumobject/docker-baseimage:20.04
+FROM quantumobject/docker-baseimage:18.04
 MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 
 #update the container
