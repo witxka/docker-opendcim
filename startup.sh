@@ -12,14 +12,14 @@ else
 fi
 
 if [ "$(ls -A /var/www/dcim/pictures)" ]; then
-   echo "plugins folder with data"
+   echo "pictures folder with data"
 else
     cp -Rp /var/backup/pictures/* /var/www/dcim/pictures/
     chown www-data:www-data /var/www/dcim/pictures
 fi
 
 if [ "$(ls -A /var/www/dcim/drawings)" ]; then
-   echo "plugins folder with data"
+   echo "drawings folder with data"
 else
     cp -Rp /var/backup/drawings/* /var/www/dcim/drawings/
     chown www-data:www-data /var/www/dcim/drawings
