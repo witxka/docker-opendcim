@@ -13,7 +13,7 @@ opendcim_version=19.01
  cd /var/www
  wget http://opendcim.org/packages/openDCIM-${opendcim_version}.tar.gz
  tar zxpvf openDCIM-${opendcim_version}.tar.gz
- ln -s openDCIM-${opendcim_version} dcim
+ mv openDCIM-${opendcim_version} dcim
  rm openDCIM-${opendcim_version}.tar.gz
  rm -R /var/www/html
  chgrp -R www-data /var/www/dcim/pictures /var/www/dcim/drawings /var/www/dcim/vendor/mpdf/mpdf/ttfontdata
