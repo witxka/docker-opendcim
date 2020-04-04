@@ -13,7 +13,7 @@ opendcim_version=19.01
  cd /var/www
  wget http://opendcim.org/packages/openDCIM-${opendcim_version}.tar.gz
  tar zxpvf openDCIM-${opendcim_version}.tar.gz
- ln -s openDCIM-${opendcim_version} dcim
+ mv openDCIM-${opendcim_version} dcim
  rm openDCIM-${opendcim_version}.tar.gz
  rm -R /var/www/html
  chgrp -R www-data /var/www/dcim/pictures /var/www/dcim/drawings /var/www/dcim/vendor/mpdf/mpdf/ttfontdata
@@ -38,3 +38,9 @@ EOF
 
 killall mysqld
 sleep 5s
+
+#make backup copy for Volume 
+mkdir -p /var/backup
+cp -Rp /var/lib/mysql /var/backup
+cp -Rp /var/www/dcim/pictures /var/backup
+cp -Rp /var/www/dcim/drawings /var/backup

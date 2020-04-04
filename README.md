@@ -20,11 +20,7 @@ To install docker in Ubuntu 18.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p 80 quantumobject/docker-opendcim
-
-or
-
-    $ docker run -d -p xxxxx:80 quantumobject/docker-opendcim
+    $ docker run -d -p 80:80 --name opendcim quantumobject/docker-opendcim
 
 Where xxxxx is the port assigned by you for the container if not docker will assigned one for it.
 
@@ -43,6 +39,14 @@ This will ask for new password for dcim user and it will remove the install scri
 To access the container from the server that the container is running :
 
     $ docker exec -it container_id /bin/bash
+
+## Added Volume for peristent data :
+
+   /var/www/dcim/pictures
+ 
+   /var/www/dcim/drawings
+   
+   /var/lib/mysql
 
 note: deploy this container behind proxy with SSL :
 
