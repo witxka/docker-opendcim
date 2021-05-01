@@ -2,7 +2,7 @@
 
 /usr/bin/mysqld_safe  &
 sleep 2s
-opendcim_version=19.01
+opendcim_version=20.02
  mysqladmin -u root password mysqlpsswd
  mysqladmin -u root -pmysqlpsswd reload
  mysqladmin -u root -pmysqlpsswd create dcim
@@ -11,12 +11,15 @@ opendcim_version=19.01
  echo "SET GLOBAL sql_mode = '';" | mysql -u root -pmysqlpsswd
 
  cd /var/www
- wget http://opendcim.org/packages/openDCIM-${opendcim_version}.tar.gz
+ wget --no-check-certificate http://opendcim.org/packages/openDCIM-${opendcim_version}.tar.gz
  tar zxpvf openDCIM-${opendcim_version}.tar.gz
  mv openDCIM-${opendcim_version} dcim
  rm openDCIM-${opendcim_version}.tar.gz
  rm -R /var/www/html
- chgrp -R www-data /var/www/dcim/pictures /var/www/dcim/drawings /var/www/dcim/vendor/mpdf/mpdf/ttfontdata
+ mkdir -p /var/www/dcim/assets/pictures
+ mkdir -p /var/www/dcim/assets/drawings
+ chmod g+w /var/www/dcim/assets/pictures /var/www/dcim/assets/drawings
+ chgrp -R www-data /var/www/dcim/assets/pictures /var/www/dcim/assets/drawings /var/www/dcim/vendor/mpdf/mpdf/ttfontdata
 
  cd /var/www/dcim
  cp db.inc.php-dist db.inc.php
@@ -42,5 +45,5 @@ sleep 5s
 #make backup copy for Volume 
 mkdir -p /var/backup
 cp -Rp /var/lib/mysql /var/backup
-cp -Rp /var/www/dcim/pictures /var/backup
-cp -Rp /var/www/dcim/drawings /var/backup
+cp -Rp /var/www/dcim/assets/pictures /var/backup
+cp -Rp /var/www/dcim/assets/drawings /var/backup

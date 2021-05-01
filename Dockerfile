@@ -1,7 +1,7 @@
 #name of container: docker-opendcim
-#versison of container: 0.4.3
+#versison of container: 1.0.1
 FROM quantumobject/docker-baseimage:18.04
-MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
+MAINTAINER witxka  "witxka@gmail.com"
 
 #update the container
 #Installation of nesesary package/software for this containers...
@@ -64,7 +64,7 @@ RUN chmod +x /sbin/after_install
 EXPOSE 80
 
 #creatian of volume 
-VOLUME /var/www/dcim/pictures /var/www/dcim/drawings /var/lib/mysql
+VOLUME /var/www/dcim/assets/pictures /var/www/dcim/assets/drawings /var/lib/mysql
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
